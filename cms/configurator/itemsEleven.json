@@ -1,0 +1,40 @@
+{
+  "heading": "ПИВО",
+  "items": [
+    {
+      "item": {
+        "heading": "Ballantine Stout разливное (темное, с лавинным эффектом)",
+        "text": "0,5 л.",
+        "price": 410
+      }
+    },
+    {
+      "item": {
+        "heading": "Schlitz разливное (светлое)",
+        "text": "0,5 л.",
+        "price": 410
+      }
+    },
+    {
+      "item": {
+        "heading": "Schlitz Weissbier разливное (светлое, нефильтрованное)",
+        "text": "0,5 л.",
+        "price": 410
+      }
+    },
+    {
+      "item": {
+        "heading": "Stiegl Goldbrau (Австрия, светлое)",
+        "text": "0,5 л.",
+        "price": 390
+      }
+    },
+    {
+      "item": {
+        "heading": "Bavaria Malt (светлое, б/а)",
+        "text": "0,45 л.",
+        "price": 280
+      }
+    }
+  ]
+}

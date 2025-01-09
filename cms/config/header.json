@@ -1,0 +1,84 @@
+{
+  "announcement": {
+    "title": "Бронирование заездов",
+    "link": "+7 925 50–50–227",
+    "map": {
+      "title": "Москва, 2-я Магистральная, 9А",
+      "link": "https://lemanskarting.ru/contacts/#na-2-oy-magistralnoy"
+    },
+    "button": {
+      "title": "Забронировать",
+      "link": "https://booking.lemanskarting.ru/"
+    }
+  },
+  "logo": {
+    "image": "/images/logo.svg",
+    "link": "https://lemanskarting.ru"
+  },
+  "links": [
+    {
+      "item": {
+        "title": "Цены",
+        "link": "https://lemanskarting.ru/prices/"
+      }
+    },
+    {
+      "item": {
+        "title": "Трассы",
+        "link": "https://lemanskarting.ru/track/"
+      }
+    },
+    {
+      "item": {
+        "title": "Карты",
+        "link": "https://lemanskarting.ru/karts/"
+      }
+    },
+    {
+      "item": {
+        "title": "Праздники",
+        "link": "https://event.lemanskarting.ru/"
+      }
+    },
+    {
+      "item": {
+        "title": "Гонки",
+        "link": "https://lemanskarting.ru/races/"
+      }
+    },
+    {
+      "item": {
+        "title": "Медиа",
+        "link": "https://lemanskarting.ru/media/"
+      }
+    },
+    {
+      "item": {
+        "title": "Школа",
+        "link": "https://lemanskarting.ru/school/"
+      }
+    },
+    {
+      "item": {
+        "title": "Кафе",
+        "link": "https://lemanskarting.ru/cafe/"
+      }
+    },
+    {
+      "item": {
+        "title": "Вакансии",
+        "link": "https://lemanskarting.ru/vacancy/"
+      }
+    },
+    {
+      "item": {
+        "title": "Контакты",
+        "link": "https://lemanskarting.ru/contacts/"
+      }
+    }
+  ],
+  "booking": {
+    "title": "Забронировать",
+    "link": "https://lemanskarting.ru/"
+  }
+}

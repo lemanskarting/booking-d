@@ -1,0 +1,228 @@
+{
+  "heading": "Дополнительные опции ",
+  "items": [
+    {
+      "item": {
+        "image": "/images/Rectangle 19.jpg",
+        "heading": "Дополнительный карт в заезде ",
+        "textMarkdown": "30 мин. - **4000 р.**\n1 час и более - **6000 р.**",
+        "amountHeading": "Кол-во картов",
+        "price": 4000,
+        "priceFromTime": 0.5,
+        "priceFrom": 6000
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-5.jpg",
+        "heading": "Судья\nили тренер",
+        "textMarkdown": "Менее 20 чел. - **4000 р.**\nОт 20 чел. - **5000 р.**",
+        "amountHeading": "Кол-во часов",
+        "price": 4000,
+        "priceFromPeople": 20,
+        "priceFrom": 5000
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-11.jpg",
+        "heading": "Приглашения\nдля гостей",
+        "textMarkdown": "1 шт. - **100 р.**",
+        "amountHeading": "Кол-во гостей",
+        "price": 100
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 191212.jpg",
+        "heading": "Диплом",
+        "textMarkdown": "1 шт. - **100 р.**",
+        "amountHeading": "Кол-во (шт.)",
+        "price": 100
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 20.jpg",
+        "heading": "Комплект\nдипломов",
+        "textMarkdown": "1 компл. - **2000 р.**",
+        "amountHeading": "Кол-во (компл.)",
+        "price": 2000
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-12.jpg",
+        "heading": "Комплект\nкубков",
+        "textMarkdown": "Стандартный - **6000 р.**\nСредний - **7000 р.**\nБольшой - **7500 р.**",
+        "amountHeading": "Комплект",
+        "price": 0,
+        "options": [
+          {
+            "item": {
+              "title": "Стандартный",
+              "price": 6000
+            }
+          },
+          {
+            "item": {
+              "title": "Средний",
+              "price": 7000
+            }
+          },
+          {
+            "item": {
+              "title": "Большой",
+              "price": 7500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-1.jpg",
+        "heading": "Медаль",
+        "textMarkdown": "1 шт. - **500 р.**",
+        "amountHeading": "Кол-во (шт.)",
+        "price": 500
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-6.jpg",
+        "heading": "Комплект\nмедалей",
+        "textMarkdown": "1 компл. - **3500 р.**\n(1,2,3 места)",
+        "amountHeading": "Кол-во (компл.)",
+        "price": 3500
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-13.jpg",
+        "heading": "Статуэтка\n«Картингист»",
+        "textMarkdown": "1 шт. - **3500 р.**",
+        "amountHeading": "Кол-во (шт.)",
+        "price": 3500
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19.jpg",
+        "heading": "Брелок",
+        "textMarkdown": "1 шт. - **500 р.**",
+        "amountHeading": "Кол-во (шт.)",
+        "price": 500
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-7.jpg",
+        "heading": "Значки\nдля детей",
+        "textMarkdown": "1 шт. - **100 р.**",
+        "amountHeading": "Кол-во (шт.)",
+        "price": 100
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-14.jpg",
+        "heading": "Фотосъёмка",
+        "textMarkdown": "Стандартная - **3500 р.**\nПремиум\n(от 2 часов) - **5500 р.**",
+        "amountHeading": "Кол-во часов",
+        "price": 3500,
+        "priceFromAmount": 2,
+        "priceFrom": 5500
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-2.jpg",
+        "heading": "Оформление\nвоздушными\nшарами",
+        "textMarkdown": "**12000 р.**",
+        "amountHeading": "",
+        "price": 12000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-8.jpg",
+        "heading": "Аниматор",
+        "textMarkdown": "**10000 р.**\n\n(опция доступна\nот 2 часов)",
+        "amountHeading": "Кол-во часов",
+        "price": 10000,
+        "min": 2
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-15.jpg",
+        "heading": "Игра\nв мафию",
+        "textMarkdown": "**11000 р.**",
+        "amountHeading": "",
+        "price": 11000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-3.jpg",
+        "heading": "Детский\nквест\nAmong Us",
+        "textMarkdown": "**23000 р.**",
+        "amountHeading": "",
+        "price": 23000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-9.jpg",
+        "heading": "Детский\nквест\nFort Boyard",
+        "textMarkdown": "**28000 р.**",
+        "amountHeading": "",
+        "price": 28000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-16.jpg",
+        "heading": "Игра\nв VR очках",
+        "textMarkdown": "**39000 р.**\n10 очков",
+        "amountHeading": "",
+        "price": 39000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-4.jpg",
+        "heading": "Шпионский квест /Квест «Игра в кальмара»",
+        "textMarkdown": "**20000 р.**",
+        "amountHeading": "",
+        "price": 20000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-10.jpg",
+        "heading": "Квест TOP",
+        "textMarkdown": "(Tik-tok-челленджи, танцевальные баттлы и др.)\n**20000 р.**",
+        "amountHeading": "",
+        "price": 20000,
+        "max": 1
+      }
+    },
+    {
+      "item": {
+        "image": "/images/Rectangle 19-17.jpg",
+        "heading": "Аренда\nконференц-зала",
+        "textMarkdown": "1 час - **6000 руб.**",
+        "amountHeading": "Кол-во часов",
+        "price": 6000
+      }
+    }
+  ]
+}

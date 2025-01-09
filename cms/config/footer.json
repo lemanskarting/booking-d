@@ -1,0 +1,133 @@
+{
+  "links": [
+    {
+      "item": {
+        "title": "Картинг",
+        "link": "https://lemanskarting.ru"
+      }
+    },
+    {
+      "item": {
+        "title": "на 2-й Магистральной",
+        "link": "https://lemanskarting.ru/track/#na-2-oy-magistralnoy"
+      }
+    },
+    {
+      "item": {
+        "title": "Школа",
+        "link": "https://lemanskarting.ru/school/"
+      }
+    },
+    {
+      "item": {
+        "title": "Гонки",
+        "link": "https://lemanskarting.ru/races/"
+      }
+    },
+    {
+      "item": {
+        "title": "Праздники",
+        "link": "https://event.lemanskarting.ru/"
+      }
+    },
+    {
+      "item": {
+        "title": "Кафе",
+        "link": "https://lemanskarting.ru/cafe/"
+      }
+    },
+    {
+      "item": {
+        "title": "Команда",
+        "link": "https://lemanskarting.ru/team/"
+      }
+    },
+    {
+      "item": {
+        "title": "2021",
+        "link": "https://lemanskarting.ru/team/#kk2021"
+      }
+    },
+    {
+      "item": {
+        "title": "2018",
+        "link": "https://lemanskarting.ru/team/#kk2018"
+      }
+    },
+    {
+      "item": {
+        "title": "2016",
+        "link": "https://lemanskarting.ru/team/#kk2016"
+      }
+    },
+    {
+      "item": {
+        "title": "2015",
+        "link": "https://lemanskarting.ru/team/#kk2015"
+      }
+    },
+    {
+      "item": {
+        "title": "Медиа",
+        "link": "https://lemanskarting.ru/media/"
+      }
+    },
+    {
+      "item": {
+        "title": "Виртуальный тур",
+        "link": "https://lemanskarting.ru/pano/city/"
+      }
+    },
+    {
+      "item": {
+        "title": "Фото",
+        "link": "https://lemanskarting.ru/media/photo/"
+      }
+    },
+    {
+      "item": {
+        "title": "Видео",
+        "link": "https://lemanskarting.ru/media/video/"
+      }
+    },
+    {
+      "item": {
+        "title": "Контакты",
+        "link": "https://lemanskarting.ru/contacts/"
+      }
+    },
+    {
+      "item": {
+        "title": "Оферта",
+        "link": "https://lemanskarting.ru/offer/"
+      }
+    },
+    {
+      "item": {
+        "title": "Оферта на проведение мероприятий",
+        "link": "https://lemanskarting.ru/events-offer/"
+      }
+    },
+    {
+      "item": {
+        "title": "Техника безопасности",
+        "link": "https://lemanskarting.ru/safety/"
+      }
+    }
+  ],
+  "smLabel": "Мы в социальных сетях",
+  "sm": [
+    {
+      "item": {
+        "icon": "/images/vk.svg",
+        "link": "https://vk.com/club15944725"
+      }
+    },
+    {
+      "item": {
+        "icon": "/images/telegram.svg",
+        "link": "https://t.me/lemans_karting"
+      }
+    }
+  ]
+}
