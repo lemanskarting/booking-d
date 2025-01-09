@@ -1,0 +1,1310 @@
+backend:
+  name: git-gateway
+  # name: github
+  # repo: vradionovskii/forza-booking
+  branch: main
+media_folder: public/images
+public_folder: /images
+locale: ru
+show_preview_links: false
+collections:
+  - name: seo
+    extension: json
+    format: json
+    label: Конфигурация
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: SEO
+        name: siteSeo
+        file: cms/config/seo.json
+        fields:
+          - label: URL
+            name: URL
+            widget: string
+          - label: Титул сайта
+            name: siteTitle
+            widget: string
+          - label: Описание сайта
+            name: siteDescription
+            widget: text
+          - label: Превью
+            name: socialCover
+            widget: image
+          - label: Ключевые слова
+            name: keywords
+            widget: text
+      - label: Шапка
+        name: header
+        file: cms/config/header.json
+        fields:
+          - label: Анонс
+            name: announcement
+            widget: object
+            fields:
+              - label: Текст
+                name: title
+                widget: string
+              - label: Ссылка
+                name: link
+                widget: string
+              - label: Карта
+                name: map
+                widget: object
+                fields:
+                  - label: Текст
+                    name: title
+                    widget: string
+                  - label: Ссылка
+                    name: link
+                    widget: string
+              - label: Кнопка
+                name: button
+                widget: object
+                fields:
+                  - label: Текст
+                    name: title
+                    widget: string
+                  - label: Ссылка
+                    name: link
+                    widget: string
+          - label: Лого
+            name: logo
+            widget: object
+            fields:
+              - label: Изображение
+                name: image
+                widget: image
+              - label: Ссылка
+                name: link
+                widget: string
+          - label: Навигация
+            name: links
+            widget: list
+            summary: "{{fields.item.title}}"
+            fields:
+              - label: Страница
+                name: item
+                widget: object
+                fields:
+                  - label: Текст
+                    name: title
+                    widget: string
+                  - label: Ссылка
+                    name: link
+                    widget: string
+          - label: Бронирование
+            name: booking
+            widget: object
+            fields:
+              - label: Текст
+                name: title
+                widget: string
+              - label: Ссылка
+                name: link
+                widget: string
+      - label: Подвал
+        name: footer
+        file: cms/config/footer.json
+        fields:
+          - label: 'Ссылки'
+            name: 'links'
+            widget: 'list'
+            summary: "{{fields.item.title}}"
+            fields:
+              - label: 'Элемент'
+                name: 'item'
+                widget: 'object'
+                fields:
+                  - label: 'Заголовок'
+                    name: 'title'
+                    widget: 'string'
+                  - label: 'Ссылка'
+                    name: 'link'
+                    widget: 'string'
+          - label: 'Мы в социальных сетях'
+            name: 'smLabel'
+            widget: 'string'
+          - label: 'Социальные сети'
+            name: 'sm'
+            widget: 'list'
+            summary: "{{fields.item.link}}"
+            fields:
+              - label: 'Элемент'
+                name: 'item'
+                widget: 'object'
+                fields:
+                  - label: 'Иконка'
+                    name: 'icon'
+                    widget: 'image'
+                  - label: 'Ссылка'
+                    name: 'link'
+                    widget: 'string'
+  - label: Опции
+    name: configurator
+    extension: json
+    format: json
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: Заезды
+        name: calendar
+        file: cms/configurator/calendar.json
+        fields:
+          - label: Заголовок 1
+            name: headingOne
+            widget: string
+          - label: Заголовок 2
+            name: headingTwo
+            widget: string
+          - label: Время с
+            name: timeFrom
+            widget: string
+          - label: Время до
+            name: timeUntil
+            widget: string
+          - label: Количество человек
+            name: people
+            widget: string
+          - label: Текст 1
+            name: textOneMarkdown
+            widget: markdown
+          - label: Заголовок 3
+            name: headingThree
+            widget: string
+          - label: Текст 2
+            name: textTwoMarkdown
+            widget: markdown
+          - label: Понедельник
+            name: monday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Вторник
+            name: tuesday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Среда
+            name: wednesday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Четверг
+            name: thursday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Пятница
+            name: friday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Суббота
+            name: saturday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Воскресенье
+            name: sunday
+            widget: list
+            summary: "{{fields.item.start}}-{{fields.item.end}}"
+            fields:
+              - label: Период
+                name: item
+                widget: object
+                fields:
+                  - label: Начало
+                    name: start
+                    widget: string
+                  - label: Конец
+                    name: end
+                    widget: string
+                  - label: Цена
+                    name: price
+                    widget: number
+                  - label: Цена От
+                    name: priceFrom
+                    widget: number
+          - label: Выходные Дни
+            name: daysOff
+            widget: list
+            summary: "{{fields.item.day}}.{{fields.item.month}}"
+            fields:
+              - label: День
+                name: item
+                widget: object
+                fields:
+                  - label: День
+                    name: day
+                    widget: number
+                  - label: Месяц
+                    name: month
+                    widget: number
+          - label: Минимальное Время
+            name: minTime
+            widget: number
+          - label: Интервал
+            name: interval
+            widget: number
+      - label: Дополнительные опции
+        name: itemsOne
+        file: cms/configurator/itemsOne.json
+        fields:
+          - label: "Дополнительные опции"
+            name: "heading"
+            widget: "string"
+          - label: "Предметы"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.item.heading}} | {{fields.item.price}} р."
+            fields:
+              - label: "Предмет"
+                name: "item"
+                widget: "object"
+                fields:
+                  - label: "Изображение"
+                    name: "image"
+                    widget: "image"
+                  - label: "Заголовок"
+                    name: "heading"
+                    widget: "string"
+                  - label: "Описание (Markdown)"
+                    name: "textMarkdown"
+                    widget: "markdown"
+                  - label: "Заголовок для Количества"
+                    name: "amountHeading"
+                    required: false
+                    widget: "string"
+                  - label: "Базовая цена"
+                    name: "price"
+                    widget: "number"
+                  - label: "Цена от времени"
+                    name: "priceFromTime"
+                    required: false
+                    widget: "number"
+                  - label: "Цена от"
+                    name: "priceFrom"
+                    required: false
+                    widget: "number"
+                  - label: "Цена от количества людей"
+                    name: "priceFromPeople"
+                    required: false
+                    widget: "number"
+                  - label: "Цена от количества"
+                    name: "priceFromAmount"
+                    required: false
+                    widget: "number"
+                  - label: "Минимум"
+                    name: "min"
+                    required: false
+                    widget: "number"
+                  - label: "Максимум"
+                    name: "max"
+                    required: false
+                    widget: "number"
+                  - label: "Варианты"
+                    name: "options"
+                    required: false
+                    widget: "list"
+                    fields:
+                      - label: "Предмет"
+                        name: "item"
+                        widget: "object"
+                        fields:
+                          - label: "Название"
+                            name: "title"
+                            widget: "string"
+                          - label: "Цена"
+                            name: "price"
+                            widget: "number"
+      - label: Блок меню 1
+        name: itemsTwo
+        file: cms/configurator/itemsTwo.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 2
+        name: itemsThree
+        file: cms/configurator/itemsThree.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 3
+        name: itemsFour
+        file: cms/configurator/itemsFour.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 4
+        name: itemsFive
+        file: cms/configurator/itemsFive.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 5
+        name: itemsSix
+        file: cms/configurator/itemsSix.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 6
+        name: itemsSeven
+        file: cms/configurator/itemsSeven.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 7
+        name: itemsEight
+        file: cms/configurator/itemsEight.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 8
+        name: itemsNine
+        file: cms/configurator/itemsNine.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 9
+        name: itemsTen
+        file: cms/configurator/itemsTen.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 10
+        name: itemsEleven
+        file: cms/configurator/itemsEleven.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Блок меню 11
+        name: itemsTwelve
+        file: cms/configurator/itemsTwelve.json
+        fields:
+          - label: "Заголовок"
+            name: heading
+            widget: string
+          - label: Позиции
+            name: items
+            widget: list
+            summary: "{{fields.item.heading}} - {{fields.item.price}} р."
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: string
+                  - label: Изображение
+                    name: imageFluid
+                    required: false
+                    widget: image
+                  - label: Цена
+                    name: price
+                    widget: number
+      - label: Тексты
+        name: text
+        file: cms/configurator/text.json
+        fields:
+          - label: "Заголовок"
+            name: headingOne
+            widget: text
+          - label: Элементы
+            name: itemsOne
+            widget: list
+            summary: "{{fields.item.heading}}"
+            fields:
+              - label: Предмет
+                name: item
+                widget: object
+                fields:
+                  - label: Иконка
+                    name: icon
+                    widget: image
+                  - label: Заголовок
+                    name: heading
+                    widget: text
+          - label: Меню ресторана
+            name: headingTwo
+            widget: string
+          - label: Укажите кол-во гостей и выберите позиции из меню
+            name: headingThree
+            widget: text
+          - label: Количество человек
+            name: people
+            widget: string
+          - label: Сумма
+            name: total
+            widget: string
+          - label: Человек
+            name: person
+            widget: string
+          - label: Обслуживание 10%
+            name: serviceTip
+            widget: string
+          - label: Ваш выбор
+            name: yourChoice
+            widget: string
+          - label: Как с вами связаться
+            name: headingFour
+            widget: string
+          - label: Подтверждение заказа
+            name: headingFourAdmin
+            widget: string
+          - label: Итого
+            name: summaryPrice
+            widget: string
+          - label: Итого с учётом скидки
+            name: summaryPriceAdmin
+            widget: string
+          - label: Текстовое поле 1
+            name: textOne
+            widget: text
+          - label: Текстовое поле 1 (Админ)
+            name: textOneAdmin
+            widget: text
+          - label: Имя (Плейсхолдер)
+            name: namePlaceholder
+            widget: string
+          - label: Имя клиента (Плейсхолдер)
+            name: namePlaceholderAdmin
+            widget: string
+          - label: E-mail (Плейсхолдер)
+            name: emailPlaceholder
+            widget: string
+          - label: Телефон (Плейсхолдер)
+            name: phonePlaceholder
+            widget: string
+          - label: Дата (Плейсхолдер)
+            name: datePlaceholder
+            widget: string
+          - label: Ваш комментарий (необязательно)
+            name: msgPlaceholder
+            widget: text
+          - label: Комментарий к заказу
+            name: msgPlaceholderAdmin
+            widget: text
+          - label: Политика конфиденциальности
+            name: privacyMarkdown
+            widget: markdown
+          - label: Оферта
+            name: eventPrivacyMarkdown
+            widget: markdown
+          - label: Примечание
+            name: disclaimer
+            widget: text
+          - label: Отправить (Кнопка)
+            name: submitButton
+            widget: string
+          - label: Заказать праздник (Кнопка)
+            name: submitButtonOrder
+            widget: string
+          - label: Размер скидки
+            name: discountAmount
+            widget: string
+          - label: Скидка
+            name: discount
+            widget: string
+          - label: С учётом скидки
+            name: includingDiscount
+            widget: string
+          - label: Спасибо!
+            name: thanks
+            widget: string
+          - label: Текст благодарности
+            name: thanksText
+            widget: text
+          - label: Текст благодарности (Админ)
+            name: thanksTextAdmin
+            widget: text
+          - label: Текст благодарности (Заказ)
+            name: thanksTextOrder
+            widget: text
+          - label: Хорошо (Кнопка)
+            name: thanksButton
+            widget: string
+
+        
+
+        
+  - label: Страницы
+    name: pages
+    extension: json
+    format: json
+    delete: false
+    editor:
+      preview: false
+    files:
+      # - label: Главная
+      #   name: homepage
+      #   file: cms/pages/homepage.json
+      #   fields:
+      - label: Email сотруднику 1
+        name: emailAdminOne
+        file: cms/pages/emailAdminOne.json
+        fields:
+          - label: Предварительный просмотр
+            name: preview
+            widget: string
+          - label: Изображение 1
+            name: imageOne
+            widget: image
+          - label: Изображение 2
+            name: imageTwo
+            widget: image
+          - label: Логотип
+            name: logo
+            widget: image
+          - label: Заголовок
+            name: heading
+            widget: string
+          - label: Текст 1
+            name: textOne
+            widget: markdown
+          - label: Текст 2
+            name: textTwo
+            widget: text
+          - label: Картинг клуб Le Mans
+            name: lemans
+            widget: string
+          - label: Заказ
+            name: order
+            widget: string
+      - label: Email сотруднику 2
+        name: emailAdminTwo
+        file: cms/pages/emailAdminTwo.json
+        fields:
+          - label: "Предварительный просмотр"
+            name: "preview"
+            widget: "string"
+          - label: "Первое изображение"
+            name: "imageOne"
+            widget: "image"
+          - label: "Второе изображение"
+            name: "imageTwo"
+            widget: "image"
+          - label: "Логотип"
+            name: "logo"
+            widget: "image"
+          - label: "Заказ подтвержден"
+            name: "dear"
+            widget: "string"
+          - label: "Текст 1"
+            name: "textOne"
+            widget: "string"
+          - label: "Текст 2"
+            name: "textTwo"
+            widget: "string"
+          - label: "Подпись"
+            name: "respect"
+            widget: "string"
+          - label: "Картинг клуб"
+            name: "lemans"
+            widget: "string"
+      - label: Email клиенту 1
+        name: emailOne
+        file: cms/pages/emailOne.json
+        fields:
+          - label: "Предварительный просмотр"
+            name: "preview"
+            widget: "string"
+          - label: "Первое изображение"
+            name: "imageOne"
+            widget: "image"
+          - label: "Второе изображение"
+            name: "imageTwo"
+            widget: "image"
+          - label: "Логотип"
+            name: "logo"
+            widget: "image"
+          - label: "Уважаемый(ая)"
+            name: "dear"
+            widget: "string"
+          - label: "Текст 1"
+            name: "textOne"
+            widget: "text"
+          - label: "Текст 2"
+            name: "textTwo"
+            widget: "text"
+          - label: "С уважением,"
+            name: "respect"
+            widget: "string"
+          - label: "Картинг клуб Le Mans"
+            name: "lemans"
+            widget: "string"
+      - label: Email клиенту 2
+        name: emailTwo
+        file: cms/pages/emailTwo.json
+        fields:
+          - label: "Предварительный просмотр"
+            name: "preview"
+            widget: "string"
+          - label: "Первое изображение"
+            name: "imageOne"
+            widget: "image"
+          - label: "Второе изображение"
+            name: "imageTwo"
+            widget: "image"
+          - label: "Логотип"
+            name: "logo"
+            widget: "image"
+          - label: "Уважаемый(ая)"
+            name: "dear"
+            widget: "string"
+          - label: "Текст 1"
+            name: "textOne"
+            widget: "text"
+          - label: "Текст 2"
+            name: "textTwo"
+            widget: "text"
+          - label: "С уважением,"
+            name: "respect"
+            widget: "string"
+          - label: "Картинг клуб Le Mans"
+            name: "lemans"
+            widget: "string"
+      - label: 'PDF'
+        name: 'pdf'
+        file: cms/pages/pdf.json
+        fields:
+          - label: "Логотип"
+            name: "logo"
+            widget: "image"
+          - label: "Заголовок 1"
+            name: "headingOne"
+            widget: "text"
+          - label: "Заголовок 1 (Финальный)"
+            name: "headingOneFinal"
+            widget: "text"
+          - label: "Текст 1"
+            name: "textOne"
+            widget: "text"
+          - label: "Текст 1 (Финальный)"
+            name: "textOneFinal"
+            widget: "text"
+          - label: "Телефон"
+            name: "phone"
+            widget: "string"
+          - label: "Напишите нам"
+            name: "mailUs"
+            widget: "string"
+          - label: "Почта"
+            name: "mail"
+            widget: "string"
+          - label: "Заголовок 2"
+            name: "headingTwo"
+            widget: "text"
+          - label: "Заголовок 2 (Финальный)"
+            name: "headingTwoFinal"
+            widget: "text"
+          - label: "Контакты"
+            name: "contacts"
+            widget: "list"
+            summary: "{{fields}}"
+            field:
+              {label: "Контакт",
+                name: "contact",
+                widget: "string"}
+          - label: "Адрес"
+            name: "address"
+            widget: "string"
+          - label: "Ваш выбор"
+            name: "choice"
+            widget: "string"
+          - label: "Стоимость"
+            name: "price"
+            widget: "string"
+          - label: "Итого"
+            name: "total"
+            widget: "string"
+      - label: 'Главная'
+        name: 'homepage'
+        file: cms/pages/homepage.json
+        fields:
+          - label: Главное Изображение
+            name: heroImageFluid
+            widget: image
+          - label: Заголовок 1
+            name: headingOne
+            widget: text
+          - label: Цена
+            name: heroPrice
+            widget: string
+          - label: Кнопка 1
+            name: buttonOne
+            widget: string
+          - label: Заголовок 2
+            name: headingTwo
+            widget: text
+          - label: Заголовок 3
+            name: headingThree
+            widget: text
+          - label: Фото праздники
+            name: itemsOne
+            widget: list
+            summary: "{{fields.item.heading}}"
+            fields:
+              - label: Предмет
+                name: item
+                widget: object
+                fields:
+                  - label: Изображение
+                    name: image
+                    widget: image
+                  - label: Заголовок
+                    name: heading
+                    widget: text
+          - label: "Праздник в LeMans"
+            name: headingNine
+            widget: string
+          - label: "Особенности"
+            name: itemsFour
+            widget: list
+            summary: "{{fields.item.heading}}"
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Изображение
+                    name: imageFluid
+                    widget: image
+                  - label: Заголовок
+                    name: heading
+                    widget: text
+          - label: Изображение сопровождение праздника
+            name: imageOneFluid
+            widget: image
+          - label: Заголовок 5
+            name: headingFive
+            widget: text
+          - label: Текст 2
+            name: textTwo
+            widget: text
+          - label: Кнопка 2
+            name: buttonTwo
+            widget: string
+          - label: Заголовок отзывы
+            name: headingFour
+            widget: text
+          - label: Текст Кнопки Отзыва
+            name: reviewButtonText
+            widget: string
+          - label: Отзывы
+            name: itemsTwo
+            widget: list
+            summary: "{{fields.item.name}}"
+            fields:
+              - label: Предмет
+                name: item
+                widget: object
+                fields:
+                  - label: Изображение
+                    name: image
+                    widget: image
+                  - label: Имя
+                    name: name
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: text
+          - label: Заголовок стоимость 1
+            name: headingTen
+            widget: string
+          - label: Заголовок стоимость 2
+            name: headingEleven
+            widget: string
+          - label: "Стоимость"
+            name: itemsFive
+            widget: list
+            summary: "{{fields.item.heading}}: {{fields.item.text}}"
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: День недели
+                    name: heading
+                    widget: string
+                  - label: Стоимость
+                    name: text
+                    widget: string
+          - label: Заголовок в стоимость включено
+            name: headingTwelve
+            widget: string
+          - label: "В стоимость включено"
+            name: itemsSix
+            widget: list
+            summary: "{{item}}"
+            field:
+              { label: Элемент,
+                name: item,
+                widget: string}
+          - label: Забронировать трассу
+            name: buttonFive
+            widget: string
+          - label: Заголовок заказать праздник
+            name: headingSix
+            widget: text
+          - label: Как заказать праздник
+            name: itemsThree
+            widget: list
+            summary: "{{fields.item.heading}}"
+            fields:
+              - label: Предмет
+                name: item
+                widget: object
+                fields:
+                  - label: Иконка
+                    name: icon
+                    widget: image
+                  - label: Заголовок
+                    name: heading
+                    widget: text
+                  - label: Текст
+                    name: text
+                    widget: text
+          - label: Кнопка 3
+            name: buttonThree
+            widget: string
+          - label: Шарики
+            name: baloons
+            widget: object
+            fields:
+              - label: Шарики десктоп
+                name: desktopBig
+                widget: image
+              - label: Шарик
+                name: desktopSmall
+                widget: image
+              - label: Шарики мобилка
+                name: mobileBig
+                widget: image
+              - label: Шарики параллакс
+                name: mobileSmallOne
+                widget: image
+          - label: "Воспользуйтесь нашим калькулятором"
+            name: headingEight
+            widget: text
+          - label: Заголовок калькулятор
+            name: headingSeven
+            widget: text
+          - label: "Кнопка выбрать"
+            name: buttonFour
+            widget: string
+          - label: "Заголовок безопасность"
+            name: headingThirteen
+            widget: string
+          - label: "Безопасность"
+            name: itemsSeven
+            widget: list
+            summary: "{{fields.item.text}}"
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Изображение
+                    name: imageFluid
+                    widget: image
+                  - label: Текст
+                    name: text
+                    widget: text
+          - label: "Галерея 1"
+            name: itemsEightFluid
+            widget: list
+            summary: "{{.}}"
+            field:
+              {label: Изображение,
+                name: item,
+                widget: image}
+          - label: "Галерея 2"
+            name: itemsEight2Fluid
+            widget: list
+            summary: "{{.}}"
+            field:
+              {label: Изображение,
+                name: item,
+                widget: image}
+          - label: "Картинг-центр LeMans это:"
+            name: headingFourteen
+            widget: string
+          - label: "Дополнительные особенности"
+            name: itemsNine
+            widget: list
+            summary: "{{fields.item.heading}}: {{fields.item.text}}"
+            fields:
+              - label: Элемент
+                name: item
+                widget: object
+                fields:
+                  - label: Иконка
+                    name: icon
+                    widget: image
+                  - label: Заголовок
+                    name: heading
+                    widget: string
+                  - label: Текст
+                    name: text
+                    widget: text
+          - label: "Заголовок контакты"
+            name: headingFifteen
+            widget: string
+          - label: "Контакты"
+            name: contacts
+            widget: list
+            summary: "{{fields.item}}"
+            field:
+               {label: Контактная информация,
+                name: item,
+                widget: string}
+      - label: '404'
+        name: '404'
+        file: cms/pages/404.json
+        fields:
+          - label: Описание
+            name: description
+            required: false
+            widget: text
+          - label: Титул
+            name: title
+            widget: string
+          - label: Заголовок
+            name: headingOne
+            widget: string
+          - label: Текст
+            name: textOne
+            widget: text
