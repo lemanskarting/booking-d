@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://booking.lemanskarting.ru
+
+# Sitemaps
+Sitemap: https://booking.lemanskarting.ru/sitemap.xml
